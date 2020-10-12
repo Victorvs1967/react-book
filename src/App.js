@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const items = [];
+  for (let i = 1; i < 10; i++) {
+    items.push(i);
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Hello, World!</h1>
+        <ul className="App-list">
+          {items.map(item => (
+          <li className="App-item" key={item}><a href="#" className="App-link">Item {item}</a></li>
+          ))}
+        </ul>
+      </header>      
     </div>
   );
 }
